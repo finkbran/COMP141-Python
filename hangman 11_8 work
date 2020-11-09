@@ -1,0 +1,81 @@
+#!/bin/python3
+import random
+
+word_list = ["hello", "jazz", "soccer", "school", "money", "python"]
+word = random.choice(word_list)
+    
+
+
+def play(word):
+    print("Welcome to Hangman!")
+    while guesses != 6:
+        guess = input("Guess a letter: ")
+        print("You guessed the letter: ", guess)
+        result = word.find(guess)
+        if result == -1: # -1 is returned if from the .find function if the letter can't be found in the word
+            guesses = guesses + 1
+            print("Sorry! ", guess, " is not a letter in the word.")
+            hangman_figures(guesses) #calls hangman figures module and passes in the guesses variable
+        else:
+            #need to figure out how to find index of, will look into it tomorrow, 11/9 or 11/10
+play()
+
+ef hangman_figures(guesses):      #prints hangman after each incorrect guess
+    if (guesses == 0):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|         ")
+        print ("|         ")
+        print ("|         ")
+        print ("|         ")
+        print ("|         ")
+    elif (guesses == 1):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|         ")
+        print ("|         ")
+        print ("|         ")
+        print ("|         ")
+     elif (guesses == 2):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|       | ")
+        print ("|       | ")
+        print ("|         ")
+        print ("|         ")
+     elif (guesses == 3):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|      \| ")
+        print ("|       | ")
+        print ("|         ")
+        print ("|         ")
+     elif (guesses == 4):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|      \|/")
+        print ("|       | ")
+        print ("|         ")
+        print ("|         ")
+~    elif (guesses == 5):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|      \|/")
+        print ("|       | ")
+        print ("|      /  ")
+        print ("|         ")
+~    elif (guesses == 6):
+        print ("--------- ")
+        print ("|       | ")
+        print ("|       O ")
+        print ("|      \|/")
+        print ("|       | ")
+        print ("|      / \ ")
+        print ("The Hangman has been completed, you LOSE!\n")
+        print ("The word was: \n")
+        print ("If you would like to play again enter 1, if you would like to quit enter 0\n")
